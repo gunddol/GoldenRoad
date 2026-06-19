@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Road LoL — Roster Lab</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <header class="header">
+      <p class="kicker">Manual roster builder</p>
+      <h1>Golden Road <span>Roster Lab</span></h1>
+      <p class="subtitle">
+        <code>data.js</code>의 선수 데이터로 포지션별 1명씩 직접 고른 뒤 Golden Road 시즌을 시뮬레이션합니다.
+      </p>
+    </header>
+
+    <main id="app">
+      <section class="panel picks-panel">
+        <div class="panel-head">
+          <h2>로스터 구성</h2>
+          <p>각 포지션에서 선수 1명을 선택하세요. 같은 선수는 한 번만 사용할 수 있습니다.</p>
+        </div>
+        <div id="pickers" class="pickers"></div>
+        <div class="toolbar">
+          <button type="button" class="btn ghost" id="btn-clear">초기화</button>
+          <button type="button" class="btn primary" id="btn-run" disabled>시즌 시뮬레이션</button>
+        </div>
+        <p class="hint" id="run-hint">5명 모두 선택하면 시뮬레이션을 실행할 수 있습니다.</p>
+      </section>
+
+      <section class="panel result-panel hidden" id="result-panel">
+        <div class="panel-head">
+          <h2>시뮬레이션 결과</h2>
+          <p id="result-subtitle"></p>
+        </div>
+        <div class="team-rating">
+          <span class="tr-label">Team Rating</span>
+          <span class="tr-value" id="team-rating">—</span>
+        </div>
+        <div class="roster-summary" id="roster-summary"></div>
+        <div class="road" id="road"></div>
+        <div class="verdict" id="verdict"></div>
+        <div class="toolbar">
+          <button type="button" class="btn ghost" id="btn-rerun">같은 로스터로 다시 돌리기</button>
+          <button type="button" class="btn primary" id="btn-edit">로스터 수정</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
